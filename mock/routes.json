@@ -1,0 +1,13 @@
+{
+    "/api/twitter/:tweetId": {
+        "GET": {
+          "action": "db.twitter.find(data => data.tweetId == :tweetId)"
+        },
+        "PUT": {
+          "action": "db.twitter.find(data => data.tweetId == :tweetId).completed = true"
+        },
+        "DELETE": {
+          "action": "db.twitter = db.twitter.filter(data => data.tweetId != :tweetId)"
+        }
+      }
+}
